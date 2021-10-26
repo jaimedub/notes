@@ -1,1 +1,14 @@
-<p>notelist works!</p>
+
+<div class="card" *ngIf="notes.length < 1">
+  <div class="card-body">
+    <h5 class="card-title">Notes not found</h5>
+  </div>
+</div>
+
+<div class="card" *ngFor="let note of notes">
+  <div class="card-body">
+    <h5 class="card-title">{{note.title}}</h5>
+    <p class="card-text">{{note.content}}</p>
+    <p class="card-text">{{note.date | date:'dd-MM-yyyy'}}</p>
+  </div>
+</div>

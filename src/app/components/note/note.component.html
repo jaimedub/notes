@@ -1,1 +1,16 @@
-<p>note works!</p>
+<div class="form">
+  <form [formGroup]="noteForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="titleInput" class="form-label">Title</label>
+      <input type="text" class="form-control upper" id="titleInput" type="text" formControlName="title" #title (input)="title.value.toUpperCase()">
+    </div>
+    <div class="mb-3">
+      <label for="textarea" class="form-label">Content</label>
+      <textarea class="form-control upper" id="textarea" rows="3" formControlName="content"></textarea>
+    </div>
+    <button type="submit" [disabled]="!noteForm.valid" class="btn btn-primary">Add</button>
+  </form>
+  <div *ngIf="noteForm.errors?.identityRevealed && (noteForm.touched || noteForm.dirty)" class="cross-validation-error-message alert alert-danger">
+    Input field are required
+  </div>
+</div>

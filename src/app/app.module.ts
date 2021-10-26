@@ -8,6 +8,9 @@ import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { environment } from '../environments/environment';
 import { NotelistComponent } from './components/notelist/notelist.component';
 import { NoteComponent } from './components/note/note.component';
+import {NoteStore} from "./stores/note.store";
+import {NoteQuery} from "./queries/note.query";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,6 +21,7 @@ import { NoteComponent } from './components/note/note.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     environment.production ? [] : AkitaNgDevtools.forRoot()
   ],
   providers: [{ provide: NG_ENTITY_SERVICE_CONFIG, useValue: { baseUrl: 'https://jsonplaceholder.typicode.com' }}],

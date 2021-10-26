@@ -1,0 +1,12 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Notes</span>
+    <div class="d-flex">
+      <button class="btn btn-primary" (click)="showForm = !showForm">New note</button>
+    </div>
+  </div>
+</nav>
+
+<app-note *ngIf="showForm"></app-note>
+
+<app-notelist></app-notelist>
